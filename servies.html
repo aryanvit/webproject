@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Our Services - Seed Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            position:fixed;
+            top: 0px;
+            width: 100%;
+            z-index: 1;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        nav a {
+        font-family: "Rubik", sans-serif;
+        margin: 0 15px;
+        text-decoration: none;
+        color: #333;
+    
+        }
+        
+        nav a:hover{
+            color: #4CAF50;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .services-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            padding: 50px;
+        }
+        .services-container {
+            display: flex;
+            gap: 30px;
+            width: 90%;
+            max-width: 1100px;
+        }
+        .service-list {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .service-box {
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight:lighter;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-box:hover {
+            transform: translateX(10px);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .quality { background: #8ce78f; }
+        .gardening { background: #69c96c; }
+        .custom { background: #8ce78f; }
+        .delivery { background: #69c96c; }
+
+        .info-photo-container {
+            width: 65%;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .service-info {
+            flex: 1;
+            width: 50%; /* Fixed width */
+            height: 250px; /* Fixed height */
+            padding: 30px;
+            border-radius: 10px;
+            background: linear-gradient(to right, #94c85e, #e6f0d8);
+            color: rgb(0, 0, 0);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .service-title {
+            font-size: 24px;
+            font-weight:400;
+            margin-bottom: 10px;
+        }
+        .service-description {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .cta-section {
+            background-color: #e4efe7;
+            color: rgb(77, 64, 64);
+            padding: 40px 20px;
+            border-radius: 5px;
+            margin-top: 0px;
+            box-shadow: 0 2px 6px rgb(122, 166, 109);
+        }
+
+        #text {
+            font-size: 2.2em;
+            font-weight:500;
+            color: rgb(45, 37, 37);
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        #cta-button {
+            background-color: rgb(232, 247, 136);
+            color: #28a745;
+            padding: 15px 30px;
+            border: rgb(212, 195, 195) solid 0.5px;
+            border-radius:  5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-decoration: none;
+            
+        }
+
+        #cta-button:hover {
+            color:black;
+            background-color: #82e38f;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            background: #222;
+            color: white;
+            padding: 5px 0;
+            margin-top: 33px;
+            text-align: center;
+            /* position: fixed;
+            bottom: 0%;
+            width: 100%; */
+        }
+        .footer a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .social-icons {
+            margin: 15px 0;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        .copyright {
+            font-size: 12px;
+            color: #bbb;
+            margin-top: 15px;
+        }
+
+        /* Back Button Style */
+        
+    </style>
+</head>
+<body>
+    <div id="up"></div>
+    <header>
+        <div class="logo">Avyan</div>
+        <nav>
+            <a href="index.html"><font style="color:#7FB800 ;">Home</font></a>
+            <a href="about.html">About</a>
+            <a href="servies.html">Services</a>
+            <a href="products.html">Products</a>
+            <a href="login.html" style="color: #a52d2d;">Sign in &nbsp &nbsp &nbsp &nbsp&nbsp</a>
+        </nav>
+    </header>
+    <main>
+
+        <section class="services-section">
+            <div class="services-container">
+                <div class="service-list">
+                    <div class="service-box quality" onclick="showInfo('Quality Seeds', 'We offer the best high-quality, organic, and non-GMO seeds to ensure maximum yield for your garden.', 'quality-seeds.jpg')">Quality Seeds</div>
+                    <div class="service-box gardening" onclick="showInfo('Gardening Advice', 'Get expert tips and guidance on how to cultivate a thriving and beautiful garden.', 'gardening-advice.jpg')">Gardening Advice</div>
+                    <div class="service-box custom" onclick="showInfo('Custom Seed Packs', 'Choose from a variety of seeds and create your own personalized seed packs.', 'custom-seed-packs.jpg')">Custom Seed Packs</div>
+                    <div class="service-box delivery" onclick="showInfo('Delivery', 'Fast and reliable nationwide delivery to get your seeds and gardening tools right to your doorstep.', 'delivery.jpg')">Delivery</div>
+                </div>
+    
+                <div class="service-info" id="serviceInfo">
+                    <div class="service-title" id="serviceTitle">Select a Service</div>
+                    <p class="service-description" id="serviceDescription">Click on a service to see more details here.</p>
+                </div>
+                </div>
+            </div>
+        </section>
+    
+        <script>
+            function showInfo(title, description) {
+                document.getElementById("serviceTitle").textContent = title;
+                document.getElementById("serviceDescription").textContent = description;
+    
+                
+            }
+        </script>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <p id="text">Ready to Start Your Garden?</p>
+            <p>Browse our collection of seeds and get started today! Whether you're a beginner or an experienced gardener, we’re here to help you grow the garden of your dreams.</p>
+        </section>
+        <div style="margin: 50px;"></div>
+        <!-- <button href="products.html" id="cta-button">Shop Now</button> -->
+        <a href="products.html" id="cta-button">Shop Now</a>
+        
+        
+    </main>
+
+    <footer class="footer">
+        <div class="footer">
+            <div>
+                
+                <a href="">Need Help?</a>
+                <a href="">Content Guide</a>
+                <a href="">Privacy</a>
+                <a href="">Terms of Use</a>
+                <a href="">Advertising</a>
+                <a href="">Jobs</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.google.com"><i class="fa-brands fa-google"></i></a>
+            </div>
+    
+            <div class="copyright">
+                &copy; 2025 Avyan. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

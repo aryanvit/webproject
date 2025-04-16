@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dealer Sign-Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      padding: 2rem;
+      background: url(photo/premium_photo-1722013867029-1044c6d84adb.avif)  no-repeat center center/cover;
+    }
+    .container {
+      background-color: #e8dcc2;
+      max-width: 600px;
+      margin: auto;
+      border: 1px solid purple;
+      border-radius: 10px;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .success {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+    }
+    #preview {
+      margin-top: 30px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Dealer Sign-Up</h2>
+    <form id="dealerForm" onsubmit="event.preventDefault(); submitForm();">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your name...">
+
+      <label for="businessName">Business Name</label>
+      <input type="text" id="businessName" placeholder="Business name...">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Email...">
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="Phone...">
+
+      <label for="address">Address</label>
+      <input type="text" id="address" placeholder="Address...">
+
+      <label for="dealershipType">Dealership Type</label>
+      <select id="dealershipType">
+        <option value="">Select</option>
+        <option value="Authorized Dealer">Authorized Dealer</option>
+        <option value="Reseller">Reseller</option>
+        <option value="Distributor">Distributor</option>
+      </select>
+
+      <button type="submit">Submit</button>
+      <button onclick="goBack(event)" style="margin-left: 10px;">Back</button>
+    </form>
+
+    <div id="preview">
+      <h3>Live Preview:</h3>
+      <p><strong>Full Name:</strong> <span id="prevName"></span></p>
+      <p><strong>Business Name:</strong> <span id="prevBusinessName"></span></p>
+      <p><strong>Email:</strong> <span id="prevEmail"></span></p>
+      <p><strong>Phone:</strong> <span id="prevPhone"></span></p>
+      <p><strong>Address:</strong> <span id="prevAddress"></span></p>
+      <p><strong>Dealership Type:</strong> <span id="prevType"></span></p>
+    </div>
+
+    <div id="successMessage" class="success">
+      Thank you! Your dealership application has been submitted successfully.
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("dealerForm");
+    const inputs = form.querySelectorAll("input, select");
+
+    inputs.forEach(input => {
+      input.addEventListener("input", updatePreview);
+    });
+
+    function updatePreview() {
+      document.getElementById("preview").style.display = "block";
+      document.getElementById("prevName").textContent = document.getElementById("name").value;
+      document.getElementById("prevBusinessName").textContent = document.getElementById("businessName").value;
+      document.getElementById("prevEmail").textContent = document.getElementById("email").value;
+      document.getElementById("prevPhone").textContent = document.getElementById("phone").value;
+      document.getElementById("prevAddress").textContent = document.getElementById("address").value;
+      document.getElementById("prevType").textContent = document.getElementById("dealershipType").value;
+    }
+
+    function submitForm() {
+      const name = document.getElementById("name").value;
+      const businessName = document.getElementById("businessName").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const address = document.getElementById("address").value;
+      const dealershipType = document.getElementById("dealershipType").value;
+
+      if (name && businessName && email && phone && address && dealershipType) {
+        document.getElementById("successMessage").style.display = "block";
+        form.reset();
+        updatePreview(); // clears preview
+      } else {
+        alert("Please fill in all fields before submitting.");
+      }
+    }
+
+    function goBack(event) {
+      event.preventDefault();
+      window.history.back();
+    }
+  </script>
+</body>
+</html>

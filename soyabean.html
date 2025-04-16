@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soyabean Product Details</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-image: url(photo/soya.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* Left column - large image */
+    .left {
+      flex: 1 1 50%;
+      background-color: #fcfcfc;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left img {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Right column - detailed information and calculator */
+    .right {
+      flex: 1 1 50%;
+      background-color: #efefe5;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-title {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .price {
+      font-size: 28px;
+      color: green;
+      margin-bottom: 20px;
+    }
+
+    .description, .details {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .details strong {
+      display: inline-block;
+      width: 120px;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: rgb(233, 218, 82);
+      color: #010e04;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .btn-back:hover {
+      color:black;
+      background-color: #82e38f;
+    }
+
+    /* Calculator Section */
+    .calculator {
+      margin-top: 30px;
+      padding: 25px;
+      background-color: #f9f9f9;
+      border: 1px solid #000000;
+      border-radius: 10px;
+    }
+
+    .calculator h2 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .calculator p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .calculator input[type="number"] {
+      width: 120px;
+      padding: 10px;
+      font-size: 18px;
+      margin-right: 15px;
+      border: 0.5px solid #000000;
+      border-radius: 5px;
+    }
+
+    .calculator button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: rgb(232, 247, 136);
+      color: #28a745;
+      border: 0.5px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .calculator button:hover {
+      color:black;
+      background-color: #82e38f;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- Left Column: Wheat Image -->
+      <div class="left">
+        <img src="photo/ChatGPT Image Apr 2, 2025 at 12_28_09 PM.png" alt="soyabean Seeds" />
+      </div>
+      <!-- Right Column: Detailed Information and Calculator -->
+      <div class="right">
+        <div class="info">
+          <h1 class="product-title">Soyabean Seeds</h1>
+          <p class="price">₹750 per 10kg bag</p>
+          <p class="description">
+            Rich in protein & oil, perfect for food, animal feed, and industrial use. Bulk orders available. Order now
+          </p>
+          <p class="details">
+            <strong>Nutritional Value:</strong> High in protein (35-40%), healthy fats (18-20% oil), fiber, vitamins (B, E), and minerals (iron, calcium). Great source of plant-based nutrition!
+            <br><br>
+            <strong>Varieties:</strong>Soybean varieties include yellow, black, green (edamame), brown, and pale yellow, each suited for different uses like food, oil, and animal feed.
+            <br><br>
+            <strong>Usage:</strong> Soybeans are used in food products (tofu, soy milk), animal feed, oil extraction, and industrial applications like biodiesel and cosmetics.
+            <br><br>
+            <strong>Origin:</strong> Soybeans originated in East Asia, specifically China, over 5,000 years ago.
+          </p>
+          <a href="products.html" class="btn-back">Back to Products</a>
+        </div>
+        <!-- Calculator Section -->
+        <div class="calculator">
+          <h2>Purchase Calculator</h2>
+          <p>Enter the number of 10kg bags you wish to purchase:</p>
+          <input type="number" id="bagCount" min="1" placeholder="Bags" />
+          <button onclick="calculateTotal()">Calculate Total</button>
+          <div class="result" id="totalCost"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculateTotal() {
+      const pricePerBag = 800; // Price for one 50kg bag
+      const bagCount = document.getElementById("bagCount").value;
+      const resultDiv = document.getElementById("totalCost");
+
+      if (bagCount === "" || bagCount <= 0) {
+        resultDiv.textContent = "Please enter a valid number of bags.";
+      } else {
+        const totalCost = bagCount * pricePerBag;
+        resultDiv.textContent = "Total Cost: ₹" + totalCost;
+
+        // Show dealership prompt if more than 15 bags
+        if (bagCount > 15) {
+          const wantsDealership = confirm("You are purchasing more than 15 bags. Do you want to apply for a dealership?");
+          if (wantsDealership) {
+            window.location.href = "dsign.html"; // Redirect to dealership page
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

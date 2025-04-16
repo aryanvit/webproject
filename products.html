@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Seed Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            position:sticky;
+            top: 0px;
+            width: 100%;
+            z-index: 1;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        nav a {
+            font-family: "Rubik", sans-serif;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+    /* font-weight: bold; */
+        }
+        nav a:hover{
+            color: #4CAF50;
+        }
+        /* Search Bar Styling */
+        .search-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #searchInput {
+            width: 400px;
+            padding: 12px;
+            border: 0.5px solid #4CAF50;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 85px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Product Card */
+        .product-card {
+            width: 282px;
+            height: 339px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .product-price {
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        /* Hover Effect */
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .original{
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+        }
+        .discount{
+            font-size: 28px;
+            color:#a72828;
+            font-weight: bold;
+        }
+        /* Highlight Effect */
+        .highlight {
+            border: 3px solid #4CAF50;
+            box-shadow: 0 0 15px rgba(103, 218, 107, 0.8);
+        }
+        .footer {
+            background: #222;
+            color: white;
+            padding: 10px 0;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .footer a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .social-icons {
+            margin: 15px 0;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        .copyright {
+            font-size: 12px;
+            color: #bbb;
+            margin-top: 15px;
+        }
+        .back-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+            display: block;
+            text-align: center;
+            width: 200px;
+            font-size: 1em;
+        }
+        .back-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Avyan</div>
+        <nav>
+            <a href="index.html"><font style="color:#7FB800 ;">Home</font></a>
+            <a href="about.html">About</a>
+            <a href="servies.html">Services</a>
+            <a href="products.html">Products</a>
+            <a href="login.html" style="color: #a52d2d;">Sign in &nbsp &nbsp &nbsp &nbsp&nbsp</a>
+        </nav>
+    </header>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card" data-name="Wheat Seeds">
+            <a href="wheat.html"><img src="product photo/wheat.png" alt="Wheat Seeds"></a>
+            <div class="product-title">Wheat Seeds</div>
+            <div class="product-price">₹80/Kg</div>
+        </div>
+        <div class="product-card" data-name="Corn Seed">
+            <img src="product photo/corn1.png" alt="Corn Seed">
+            <div class="product-title">Corn Seed</div>
+            <div class="product-price"><span class="original">₹80/Kg</span><span id="discount">₹65/Kg</span></div>
+        </div>
+        <div class="product-card" data-name="Cotton Seed">
+            <img src="product photo/cotton1.png" alt="Cotton Seed">
+            <div class="product-title">Cotton Seed</div>
+            <div class="product-price">₹35/Kg</div>
+        </div>
+        <div class="product-card" data-name="Soyabean Seed">
+            <a href="soyabean.html"><img src="product photo/soyabean1.png" alt="Soyabean Seed"></a>
+            <div class="product-title">Soyabean Seed</div>
+            <div class="product-price">₹75/kg</div>
+        </div>
+        <div class="product-card" data-name="Peanuts Seed">
+            <img src="product photo/peanuts.png" alt="Peanuts Seed">
+            <div class="product-title">Peanuts Seed</div>
+            <div class="product-price">₹40/Kg</div>
+        </div>
+        <div class="product-card" data-name="Pules Seed">
+            <img src="product photo/pules.jpg" alt="Pules Seed">
+            <div class="product-title">Pules Seed</div>
+            <div class="product-price">₹66/Kg</div>
+        </div>
+        <div class="product-card" data-name="Sunflower Seed">
+            <img src="product photo/sunflower.png" alt="Sunflower Seed">
+            <div class="product-title">Sunflower Seed</div>
+            <div class="product-price">₹90/Kg</div>
+        </div>
+        <div class="product-card" data-name="Pumpkin Seed">
+            <img src="product photo/pumpkin.png" alt="Pumpkin Seed">
+            <div class="product-title">Pumpkin Seed</div>
+            <div class="product-price">₹110/Kg</div>
+        </div>
+        <div class="product-card" data-name="Chia Seed">
+            <img src="product photo/chia.png" alt="Chia Seed">
+            <div class="product-title">Chia Seed</div>
+            <div class="product-price">₹450/Kg</div>
+        </div>
+        <div class="product-card" data-name="Basil Seed">
+            <img src="product photo/basil.png" alt="Basil Seed">
+            <div class="product-title">Basil Seed</div>
+            <div class="product-price">₹53/Kg</div>
+        </div>
+    </div>
+
+    <script>
+        function searchProducts() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let products = document.querySelectorAll(".product-card");
+    
+            products.forEach(product => {
+                let name = product.getAttribute("data-name").toLowerCase();
+                if (input === "") {
+                    product.classList.remove("highlight"); // Remove highlight if search is empty
+                } else if (name.includes(input)) {
+                    product.classList.add("highlight");
+                } else {
+                    product.classList.remove("highlight");
+                }
+            });
+        }
+    </script>
+    <br>
+    <footer class="footer">
+        <div class="footer">
+            <div>
+                
+                <a href="">Need Help?</a>
+                <a href="">Content Guide</a>
+                <a href="">Privacy</a>
+                <a href="">Terms of Use</a>
+                <a href="">Advertising</a>
+                <a href="">Jobs</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.google.com"><i class="fa-brands fa-google"></i></a>
+            </div>
+    
+            <div class="copyright">
+                &copy; 2025 Avyan. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

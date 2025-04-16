@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avyan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+
+
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            position:fixed;
+            top: 0px;
+            width: 100%;
+            z-index: 1;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+
+        }
+        nav a {
+            font-family: "Rubik", sans-serif;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            /* font-weight: bold; */
+        }
+        nav a:hover{
+            color: #4CAF50;
+        }x
+        nav a:active{
+            color: white;
+        }
+        .hero {
+            background: url(photo/background2.jpg) no-repeat center center/cover;
+            height: 85vh;
+            color: white;
+            padding: 0 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            height: 100vh;
+          }
+          
+          #title{
+            font-family: Copperplate, Papyrus, fantasy;
+            margin-top: 3%;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 2s ease-out;
+          }
+          
+          .hero p {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 2.5s ease-out;
+          }
+          
+          .cta-btn {
+            margin-top: 100px;
+            background-color: #388e3c;
+            padding: 0.8rem 2rem;
+            color: rgb(60, 57, 57);
+            border-radius: 30px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+            text-decoration: none;
+          }
+          
+          .cta-btn:hover {
+            background-color: rgb(205, 166, 11);
+          }
+          
+          /* About Section */
+          .about {
+            padding: 3rem 1rem;
+            background-color: #b5e890;
+            text-align: center;
+          }
+          
+          #head {
+            font-family: Copperplate, Papyrus, fantasy;
+            margin-top: 40px;
+            margin-left: 560px;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: rgb(65, 53, 88);
+          }
+          
+          .about-content {
+            display: flex;
+            justify-content: space-around;
+            color: rgb(0, 0, 0);
+            align-items: center;
+            gap: 2rem;
+            margin-top: 3rem;
+          }
+          
+          .about-content img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+            
+          }
+          
+          .about p {
+            font-family: "Times New Roman", Times, serif;
+            max-width: 600px;
+            font-size:25px;
+            line-height: 1.8;
+          }
+          
+          /* Services Section */
+          .services {
+            padding: 1rem 2rem;
+            background: rgb(231, 246, 172);
+            text-align: center;
+          }
+          
+          .services h2 {
+            font-family: Copperplate, Papyrus, fantasy;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+          }
+          
+          .service-cards {
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+          }
+          
+          .service-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            width: 30%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+          }
+          
+          .service-card h3 {
+            font-family: Copperplate, Papyrus, fantasy;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+          }
+          
+          .service-card p {
+            font-size: 1rem;
+          }
+          .features {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .feature {
+          font-family: "Times New Roman", Times, serif;
+          margin: 50px 100px;
+          text-align: center;
+      }
+      .last{
+        margin-top: 10px;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      }
+        .container {
+            background-color: #559b58; /* Dark green background */
+            color: white;
+            padding: 40px;
+            text-align: center;
+            width: 80%; /* Adjust width as needed */
+            max-width: 800px; /* Maximum width */
+        }
+
+        .header-text {
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            color: #d4d4d4; /* Light gray for the header text */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="email"] {
+            padding: 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            width: 60%; /* Adjust width as needed */
+            max-width: 400px; /* Maximum width */
+            color: #333;
+        }
+
+        #lastbtn{
+            padding: 13px 23px;
+            background-color: rgb(199, 103, 13); /* Bright green button */
+            border: none;
+            border-radius: 0 5px 5px 0;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .circles {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            padding: 10px 0;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .footer a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .social-icons {
+            margin: 15px 0;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        .copyright {
+            font-size: 12px;
+            color: #bbb;
+            margin-top: 15px;
+        }
+        .image-container {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            
+        }
+        .image-container img {
+            background-color: #4CAF50 ;
+            max-width: 350px;
+            border-radius: 60px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes fadeIn {
+            0% {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+        }
+  
+  </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Avyan</div>
+    <nav>
+        <a href="index.html"><font style="color:#7FB800 ;">Home</font></a>
+        <a href="about.html">About</a>
+        <a href="servies.html">Services</a>
+        <a href="products.html">Products</a>
+        <a id="sign" href="login.html" style="color: #a52d2d;">Sign in &nbsp &nbsp &nbsp &nbsp&nbsp</a>
+    </nav>
+</header>
+<section id="home" class="hero" >
+    <div class="hero-content">
+      <p id="title" style="color: #fbc02d;">Grow Clean <span style="color:#4c713d; ">Eat Green</span></p>
+      <br>
+      <p style="color:#e0e0e0;">Emphasizes traceability and consistent standards.</p>
+      <br>
+      <br>
+
+      <!-- <a href="#services" class="cta-btn">Explore Our Products</a> -->
+    </div>
+  </section>
+
+
+  <section class="about">
+    <p id="head">Why Choose Us?</p>
+    <div class="about-content">
+      <p>At AVYAN, we provide the finest quality seeds to help you cultivate beauty, nourishment, and sustainability. Whether you're growing vibrant flowers, luscarefully selected seeds promise bountiful harvests. y. Let's nurture nature together—one seed at a time!
+      </p>
+      <img src="photo/organicfood.jpg.png" alt="Organic food" />
+    </div>
+  </section>
+  <br>
+  <br>
+
+  <div class="image-container">
+    <img src="photo/photo1.jpg" alt="Organic Vegetables">
+</div>
+
+
+<section class="features">
+    <div class="feature">
+        <h3>Natural Food</h3>
+        <p>Grow pure, healthy food from quality seeds</p>
+    </div>
+    <div class="feature">
+        <h3>Biologically Safe</h3>
+        <p>Plant healthy, biodegradable seeds for a safe future</p>
+    </div>
+    <div class="feature">
+        <h3>Improve Health</h3>
+        <p>Plant seeds, harvest health, taste the difference</p>
+    </div>
+</section>
+  <section id="services" class="services">
+    <h2>What in season</h2>
+    <div class="service-cards">
+      <div class="service-card" style="background: url(photo/summer.jpg) no-repeat center center/cover;">
+      </div>
+      <div class="service-card" style="background: url(photo/win.jpg)  no-repeat center center/cover;">
+      </div>
+      <div class="service-card" style="background: url(photo/spring.jpg)  no-repeat center center/cover;">
+      </div>
+    </div>
+  </section>
+  <section class="last">
+    <div class="container">
+      <div class="header-text">
+          — WANT TO KNOW ABOUT OUR OFFERS? —
+      </div>
+      <h3>Subscribe Our Newsletter</h3>
+      <div class="input-container">
+          <input type="email" placeholder="Email">
+          <a id="lastbtn" href="signup.html">Sign-Up</a>
+      </div>
+      
+      <div class="circles">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+      </div>
+    </div>
+  </section>
+
+<footer class="footer">
+    <div class="footer">
+        <div>
+            
+            <a href="">Need Help?</a>
+            <a href="">Content Guide</a>
+            <a href="">Privacy</a>
+            <a href="">Terms of Use</a>
+            <a href="">Advertising</a>
+            <a href="">Jobs</a>
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.google.com"><i class="fa-brands fa-google"></i></a>
+        </div>
+
+        <div class="copyright">
+            &copy; 2025 Avyan. All rights reserved.
+        </div>
+    </div>
+</footer>
+<script src="javascript.js"></script>
+</body>
+</html>

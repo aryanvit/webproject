@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>About Us - Seed Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            position:fixed;
+            top: 0px;
+            width: 100%;
+            z-index: 1;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        nav a {
+            font-family: "Rubik", sans-serif;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            /* font-weight: bold; */
+        }
+        nav a:hover{
+            color: #4CAF50;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Main Content Styles */
+        main {
+            
+            padding: 20px;
+            text-align: center;
+        }
+
+        .about-section {
+            background-color: rgb(234, 232, 209);
+            padding: 40px 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #h2 {
+            font-size: 2.5em;
+            font-weight:400;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            color: #342f2f;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .mission-statement {
+            background-color: #e4efe7;
+            color: rgb(11, 10, 10);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #h3 {
+            
+            font-weight:450;
+            font-size: 2.5em;
+        }
+        .team-section {
+            margin-top: 20px;
+            margin-left: 385px;
+            background-color: #e2f9e3;
+            text-align: center;
+            padding: 10px;
+            width: 900px;
+            border-radius: 8px;
+            
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .team-member {
+            background: rgb(232, 239, 201);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+           
+        }
+
+        .team-member img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        #h5{
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .contact-section {
+            margin-top: 20px;
+            text-align: center;
+            padding: 50px;
+            background-color: #faedd7;
+            border-radius: 10px;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #a1{
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: auto;
+            gap: 20px;
+        }
+
+        .contact-info {
+            margin-top: 50px;
+            margin-left: 40px ;
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+
+        #a2{
+            font-size: 1.2em;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 250px;
+            background: rgb(241, 244, 229);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            padding: 10px 0;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .footer a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .social-icons {
+            margin: 15px 0;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        .copyright {
+            font-size: 12px;
+            color: #bbb;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Avyan</div>
+        <nav>
+            <a href="index.html"><font style="color:#7FB800 ;">Home</font></a>
+            <a href="about.html">About</a>
+            <a href="servies.html">Services</a>
+            <a href="products.html">Products</a>
+            <a href="login.html" style="color: #a52d2d;">Sign in &nbsp &nbsp &nbsp &nbsp&nbsp</a>
+        </nav>
+    </header>
+
+    <main>
+        
+
+        <section class="about-section">
+            <p id="h2">Our Story</p>
+            <p>Welcome to Seed Shop! We started with a simple mission: to provide high-quality, sustainable seeds to gardeners around the world. Our journey began with a small collection of handpicked seeds, and today, we proudly offer a diverse range of seeds for every kind of garden. Whether you're growing flowers, vegetables, or herbs, our seeds are sourced from trusted farms, ensuring the best possible results for your garden.</p>
+            
+            <p>We believe that gardening can have a profound impact on both the environment and your well-being. That’s why we’re dedicated to offering only the best products and sharing our knowledge with our customers. Gardening is not just a hobby – it’s a way to reconnect with nature and improve your life in countless ways.</p>
+        </section>
+
+        <section class="mission-statement">
+            <p id="h3">Our Goal</p>
+            <p style="font-size: 1.2em;">To supply high-quality, genetically superior seeds that enhance agricultural productivity, promote sustainability, and support farmers with reliable, innovative solutions for better yields and long-term success</p>
+        </section>
+        <section class="team-section">
+            <p style="font-size: 1.5em;">Team</p>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="photo/IMG_7232.heic" alt="Founder">
+                    <p id="h5">Unnatii singh</p>
+                    <p>member</p>
+                </div>
+                <div class="team-member">
+                    <img src="photo/IMG_9102.heic" alt="Farm Manager">
+                    <p id="h5">Aryan chaudhary</p>
+                    <p>member</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact-section" >
+            <p id="a1">Contact Us</p>
+            <p>We'd love to hear from you! Fill out the form below or reach out using our contact details.</p>
+        
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p id="a2">Our Address:</p>
+                    <p>VIT University vellore</p>
+        
+                    <p id="a2">Email:</p>
+                    <p><a href="mailto:support@farmino.com">support@avyan.com</a></p>
+        
+                    <p id="a2">Phone:</p>
+                    <p><a href="tel:+1234567890">+91 9409496006</a></p>
+                </div>
+        
+                <div class="contact-form">
+                    <form action="submit_contact.php" method="post">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+        
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+        
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer">
+            <div>
+                
+                <a href="">Need Help?</a>
+                <a href="">Content Guide</a>
+                <a href="">Privacy</a>
+                <a href="">Terms of Use</a>
+                <a href="">Advertising</a>
+                <a href="">Jobs</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.google.com"><i class="fa-brands fa-google"></i></a>
+            </div>
+    
+            <div class="copyright">
+                &copy; 2025 Avyan. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
